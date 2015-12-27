@@ -144,6 +144,8 @@ Plugin 'altercation/vim-colors-solarized'
 " Perform all your vim insert mode completions with Tab
 " ---------------------------------------------------
 Plugin 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 
 " YouCompleteMe
 " Plugin 'Valloric/YouCompleteMe'
@@ -161,7 +163,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " 使用前先安装  pip install --upgrade pyflakes
-let g:syntastic_python_checkers = ['pyflakes']
+" let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['flake8']
+
 
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 " ---------------------------------------------------
@@ -196,7 +200,8 @@ Plugin 'easymotion/vim-easymotion'
 " A Vim plugin which shows a git diff in the gutter (sign column) and
 " stages/reverts hunks.
 " ---------------------------------------------------
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
+" let g:gitgutter_max_signs = 500
 
 
 Bundle 'Xuyuanp/nerdtree-git-plugin'
@@ -220,9 +225,10 @@ Plugin 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
 let g:NERDCustomDelimiters = {
-            \ 'vimentry': { 'left': '--' },
-            \ }
-
+    \ 'python': { 'left': '#', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
+    \ 'py': { 'left': '#', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
+    \ 'grondle': { 'left': '{{', 'right': '}}' }
+\ }
 
 " vim-surround: invoke when you select words and press 's'
 " surround.vim: quoting/parenthesizing made simple
@@ -243,7 +249,7 @@ let g:NERDTreeMapToggleZoom = '<Space>'
 " aperezdc/vim-template
 " ---------------------------------------------------
 Bundle 'aperezdc/vim-template'
-let g:license = "beijing zmeng inc."
+let g:license = "ZMENG"
 let g:email = "wangdongyuan@zmeng123.com"
 let g:username = "daniel"
 

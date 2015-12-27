@@ -34,6 +34,16 @@ set tabstop=4     " (ts) width (in spaces) that a <tab> is displayed as
 set expandtab     " (et) expand tabs to spaces (use :retab to redo entire file)
 set shiftwidth=4  " (sw) width (in spaces) used in each step of autoindent (aswell as << and >>)
 
+" Stupid shift key fixes
+cmap W w
+cmap WQ wq
+cmap wQ wq
+cmap Q q
+cmap Tabe tabe
+
+" C/C++编码设置
+" set cin
+" set cino=:0g0t0(sus
 
 " leader
 let mapleader=";"
@@ -58,8 +68,23 @@ if exists('+colorcolumn')
     " highlight ColorColumn ctermbg=235 guibg=#2c2d27
     highlight ColorColumn guibg=#2d2d2d ctermbg=246
     highlight ColorColumn guibg=#000000 ctermbg=0
-    set colorcolumn=80,100
+    set colorcolumn=79,100
     let &colorcolumn=join(range(81,100),",")
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
+
+""
+"" status line configure
+""
+hi User1 ctermfg=red guibg=orange guifg=orange
+set laststatus=2
+set statusline=(%m)%-20F\ 
+set statusline+=[%{&ff}(%{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')})]\ 
+"set statusline+=%1*[%{&fenc!=''?&fenc:&enc}]%0*\ 
+set statusline+=[%{&fenc!=''?&fenc:&enc}]\ 
+"set statusline+=%Y\  " 缓冲区文件类型
+"set statusline+=[%03c:%L]\ 
+set statusline+=[%03c,%03l\|%p%%*%L]
+"set statusline+=\ %m%r\ %= 
