@@ -41,6 +41,8 @@ cmap wQ wq
 cmap Q q
 cmap Tabe tabe
 
+" 设置断行
+set textwidth=78
 " C/C++编码设置
 " set cin
 " set cino=:0g0t0(sus
@@ -69,7 +71,7 @@ if exists('+colorcolumn')
     highlight ColorColumn guibg=#2d2d2d ctermbg=246
     highlight ColorColumn guibg=#000000 ctermbg=0
     set colorcolumn=79,100
-    let &colorcolumn=join(range(81,100),",")
+    let &colorcolumn=join(range(80,100),",")
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
