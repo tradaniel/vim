@@ -42,7 +42,7 @@ cmap Q q
 cmap Tabe tabe
 
 " 设置断行
-set textwidth=78
+" set textwidth=78
 " C/C++编码设置
 " set cin
 " set cino=:0g0t0(sus
