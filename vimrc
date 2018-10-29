@@ -3,14 +3,15 @@ source ~/.vim/vimrc.plugin
 " 注意位置不能放在上面
 syntax enable
 set background=dark
-" set t_Co=256
-" let g:solarized_termtrans=1
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
-" let g:solarized_termcolors=256
 set cursorline
-colorscheme solarized
-" colorscheme Tomorrow-Night
+" set background=dark
+" set termguicolors
+" colorscheme material-monokai
+" colorscheme Tommorrow-Night
+set background=dark
+let g:airline_theme = "hybrid"
+colorscheme hybrid_material
+
 
 " 显示tab
 set list!
@@ -87,13 +88,13 @@ endif
 ""
 "" status line configure
 ""
-hi User1 ctermfg=red guibg=orange guifg=orange
-set laststatus=2
-set statusline=(%m)%-20F\ 
-set statusline+=[%{&ff}(%{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')})]\ 
-"set statusline+=%1*[%{&fenc!=''?&fenc:&enc}]%0*\ 
-set statusline+=[%{&fenc!=''?&fenc:&enc}]\ 
-"set statusline+=%Y\  " 缓冲区文件类型
-"set statusline+=[%03c:%L]\ 
-set statusline+=[%03c,%03l\|%p%%*%L]
-"set statusline+=\ %m%r\ %= 
+" hi User1 ctermfg=red guibg=orange guifg=orange
+" set laststatus=2
+" set statusline=(%m)%-20F\ 
+" set statusline+=[%{&ff}(%{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')})]\ 
+" "set statusline+=%1*[%{&fenc!=''?&fenc:&enc}]%0*\ 
+" set statusline+=[%{&fenc!=''?&fenc:&enc}]\ 
+" "set statusline+=%Y\  " 缓冲区文件类型
+" "set statusline+=[%03c:%L]\ 
+" set statusline+=[%03c,%03l\|%p%%*%L]
+" "set statusline+=\ %m%r\ %= 
