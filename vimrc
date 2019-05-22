@@ -12,6 +12,14 @@ set background=dark
 let g:airline_theme = "hybrid"
 colorscheme hybrid_material
 
+" set nobackup 表示不需要备份文件
+" set noswapfile 表示不创建临时交换文件
+" set nowritebackup 表示编辑的时候不需要备份文件
+" set noundofile 表示不创建撤销文件
+set nobackup       " no backup files
+set noswapfile     " no swap files
+set nowritebackup  " only in case you don't want a backup file while editing
+set noundofile     " no undo files
 
 " 显示tab
 set list!

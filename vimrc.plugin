@@ -37,6 +37,8 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+ " Auto toggle paste mode when paste"
+Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " YouCompleteMe
 " Plugin 'Valloric/YouCompleteMe'
