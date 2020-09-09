@@ -122,13 +122,13 @@ let g:NERDTreeMapToggleZoom = '<Space>'
 
 " aperezdc/vim-template
 " ---------------------------------------------------
-Bundle 'aperezdc/vim-template'
+Plug 'aperezdc/vim-template'
 let g:license = "ZMENG"
 let g:email = "wangdongyuan@zmeng123.com"
 let g:username = "daniel"
 
 
-Bundle 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 
 
 Plug 'ntpeters/vim-better-whitespace'
@@ -141,16 +141,3 @@ Plug 'Raimondi/delimitMate'
 
 " Initialize plugin system
 call plug#end()
-
-filetype Plug indent on    " required
-" To ignore Plug indent changes, instead use:
-"filetype Plug on
-"
-" Brief help
-" :PlugList       - lists configured Plugs
-" :PlugInstall    - installs Plugs; append `!` to update or just :PlugUpdate
-" :PlugSearch foo - searches for foo; append `!` to refresh local cache
-" :PlugClean      - confirms removal of unused Plugs; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plug stuff after this line

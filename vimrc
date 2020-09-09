@@ -1,5 +1,6 @@
 source ~/.vim/vimrc.plugin
 
+set wrap
 " 注意位置不能放在上面
 syntax enable
 set background=dark
@@ -40,13 +41,6 @@ set autoindent
 set tabstop=4     " (ts) width (in spaces) that a <tab> is displayed as
 set expandtab     " (et) expand tabs to spaces (use :retab to redo entire file)
 set shiftwidth=4  " (sw) width (in spaces) used in each step of autoindent (aswell as << and >>)
-
-" Stupid shift key fixes
-cmap W w
-cmap WQ wq
-cmap wQ wq
-cmap Q q
-cmap Tabe tabe
 
 " 设置断行
 " set textwidth=78
@@ -92,6 +86,8 @@ else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
+" python-mode/python-mode
+" let g:pymode_python = 'python3'
 
 ""
 "" status line configure
