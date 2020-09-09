@@ -1,52 +1,48 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-sensible'
 
-Plugin 'tpope/vim-sensible'
-
-" Plugin 'https://github.com/skielbasa/vim-material-monokai'
-Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plug 'https://github.com/skielbasa/vim-material-monokai'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Vim script for text filtering and alignment
 " ---------------------------------------------------
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
-" My Plugins
-Plugin 'altercation/vim-colors-solarized'
+" My Plugs
+Plug 'altercation/vim-colors-solarized'
 
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plug 'chriskempson/vim-tomorrow-theme'
 
 "Produce increasing/decreasing columns of numbers, dates, or daynames
-Plugin 'vim-scripts/VisIncr'
+Plug 'vim-scripts/VisIncr'
 
-Plugin 'luochen1990/rainbow'
+Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 " Perform all your vim insert mode completions with Tab
 " ---------------------------------------------------
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
  " Auto toggle paste mode when paste"
-Plugin 'ConradIrwin/vim-bracketed-paste'
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " YouCompleteMe
-" Plugin 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 " let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " Syntax checking hacks for vim
 " ---------------------------------------------------
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -62,43 +58,43 @@ set statusline+=%*
 
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 " ---------------------------------------------------
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Fuzzy file, buffer, mru, tag, etc finder.
 " ---------------------------------------------------
 " ---------------------------------------------------
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
 " lean & mean status/tabline for vim that's light as air
 " ---------------------------------------------------
-" Plugin 'bling/vim-airline'
+" Plug 'bling/vim-airline'
 
-" Vim plugin that displays tags in a window, ordered by scope
+" Vim Plug that displays tags in a window, ordered by scope
 " ---------------------------------------------------
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " Vim Markdown runtime files
 " ---------------------------------------------------
-Plugin 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 
 " A better JSON for Vim: distinct highlighting of keywords vs values,
 " JSON-specific (non-JS) warnings, quote concealing. Pathogen-friendly.
 " ---------------------------------------------------
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 
 
 " ---------------------------------------------------
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 
-" A Vim plugin which shows a git diff in the gutter (sign column) and
+" A Vim Plug which shows a git diff in the gutter (sign column) and
 " stages/reverts hunks.
 " ---------------------------------------------------
-" Plugin 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 " let g:gitgutter_max_signs = 500
 
 " nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
 " ---------------------------------------------------
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
@@ -111,14 +107,14 @@ let g:NERDCustomDelimiters = {
 " vim-surround: invoke when you select words and press 's'
 " surround.vim: quoting/parenthesizing made simple
 " ---------------------------------------------------
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 xmap s <Plug>VSurround
 
 
 " nerdtree: invoke by :NERDTreeToggle
 " ---------------------------------------------------
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 let g:NERDTreeWinSize = 30
 let g:NERDTreeMouseMode = 1
@@ -135,25 +131,26 @@ let g:username = "daniel"
 Bundle 'Yggdroot/indentLine'
 
 
-Plugin 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 nnoremap <unique> <leader>w :StripWhitespace<CR>
 
 
-" Vim plugin, provides insert mode auto-completion for quotes, parens,
+" Vim Plug, provides insert mode auto-completion for quotes, parens,
 " brackets, etc.
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+" Initialize plugin system
+call plug#end()
+
+filetype Plug indent on    " required
+" To ignore Plug indent changes, instead use:
+"filetype Plug on
 "
 " Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PlugList       - lists configured Plugs
+" :PlugInstall    - installs Plugs; append `!` to update or just :PlugUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused Plugs; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Put your non-Plug stuff after this line
